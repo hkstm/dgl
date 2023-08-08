@@ -255,7 +255,7 @@ if include_libs:
     setup_kwargs = {"include_package_data": True, "data_files": data_files}
 
 setup(
-    name="dgl" + os.getenv("DGL_PACKAGE_SUFFIX", ""),
+    name="dgl",
     version=VERSION,
     description="Deep Graph Library",
     zip_safe=False,
