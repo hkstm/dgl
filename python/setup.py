@@ -256,7 +256,7 @@ if include_libs:
 
 setup(
     name="dgl",
-    version=VERSION,
+    version="1.1.x",
     description="Deep Graph Library",
     zip_safe=False,
     maintainer="DGL Team",
