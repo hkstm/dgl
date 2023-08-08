@@ -322,24 +322,6 @@ def load_partition_feats(
         )
         edge_feats = load_tensors(feat_path)
         logging.info("Finished loading edge data.")
-    # In the old format, the feature name doesn't contain node/edge type.
-    # For compatibility, let's add node/edge types to the feature names.
-    if node_feats is not None:
-        new_feats = {}
-        for name in node_feats:
-            feat = node_feats[name]
-            if name.find("/") == -1:
-                name = DEFAULT_NTYPE + "/" + name
-            new_feats[name] = feat
-        node_feats = new_feats
-    if edge_feats is not None:
-        new_feats = {}
-        for name in edge_feats:
-            feat = edge_feats[name]
-            if name.find("/") == -1:
-                name = _etype_tuple_to_str(DEFAULT_ETYPE) + "/" + name
-            new_feats[name] = feat
-        edge_feats = new_feats
 
     return node_feats, edge_feats
 
